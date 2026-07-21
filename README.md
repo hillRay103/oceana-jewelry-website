@@ -2,8 +2,6 @@
 
 Oceana is a full-stack jewelry e-commerce website that lets customers browse collections, view product details, manage a shopping cart, and complete checkout — built with a clean HTML/CSS/JS frontend and a Node.js/Express backend backed by MongoDB.
 
----
-
 ##  Features
 
 - 💍 Browse jewelry products by category (rings, necklaces, earrings, bracelets)
@@ -13,8 +11,6 @@ Oceana is a full-stack jewelry e-commerce website that lets customers browse col
 - 📦 Order creation and tracking
 - 📱 Fully responsive design for mobile and desktop
 
----
-
 ## Tech Stack
 
 | Layer      | Technology                  |
@@ -23,11 +19,8 @@ Oceana is a full-stack jewelry e-commerce website that lets customers browse col
 | Backend    | Node.js, Express             |
 | Database   | MongoDB                      |
 
----
-
 ##  Folder Structure
 
-```
 oceana/
 ├── frontend/
 │   ├── index.html
@@ -60,9 +53,7 @@ oceana/
 │
 ├── package.json
 └── README.md
-```
 
----
 
 ## 🔌 API Endpoints
 
@@ -90,7 +81,6 @@ oceana/
 | GET    | `/api/orders/:id`     | Get a single order by ID      |
 | POST   | `/api/orders`         | Create a new order            |
 
----
 
 ## ⚙️ Getting Started
 
@@ -108,16 +98,12 @@ cd oceana
 # Install backend dependencies
 cd backend
 npm install
-```
 
 ### Environment Variables
 
 Create a `.env` file in the `backend/` folder:
-
-```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
-```
 
 ### Run the Project
 
@@ -126,7 +112,6 @@ MONGO_URI=your_mongodb_connection_string
 npm start
 
 # Open frontend/index.html in your browser
-``
 
 ## 🚀 Future Improvements
 
@@ -134,4 +119,5 @@ npm start
 - Payment gateway integration
 - Product reviews and ratings
 - Admin dashboard for inventory management
+
 
