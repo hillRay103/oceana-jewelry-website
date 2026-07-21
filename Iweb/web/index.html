@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">OCEANA</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="mainprl.html">PEARL VAULT</a></li>
+                    <li><a href="#footer">CONTACT</a></li>
+                </ul>
+            </div>
+           
+            <div class="actions">
+                <a href="#"><button class="cart-btn">Welcome</button></a>
+                <div class="search">
+                    <input class="srch" type="search" name="" placeholder="Type to search">
+                    <a href="#"><button class="btn">Search</button></a>
+                </div>
+            </div>
+        </div>
+        <pre><b>Pure elegance in every pearl</b></pre>
+    </div>
+   
+    
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+            <p id="formStatus" style="margin-top:10px; font-weight:bold;"></p>
+        </form>
+    </div>
+
+    <script>
+        // ── Contact Form → MongoDB (via Express API) ──────────────
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();  // stop page from reloading
+
+            const statusEl = document.getElementById('formStatus');
+            statusEl.textContent = 'Sending...';
+
+            const formData = {
+                name:    document.getElementById('name').value,
+                email:   document.getElementById('email').value,
+                message: document.getElementById('message').value,
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/api/contacts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusEl.style.color = 'green';
+                    statusEl.textContent = '✅ Message sent successfully!';
+                    this.reset();  // clear the form
+                } else {
+                    statusEl.style.color = 'red';
+                    statusEl.textContent = '❌ Error: ' + result.error;
+                }
+            } catch (err) {
+                statusEl.style.color = 'red';
+                statusEl.textContent = '❌ Could not connect to server. Is it running?';
+            }
+        });
+    </script>
+
+
+    <div id="about" class="about-container">
+        <h1>About Us</h1>
+        <p>
+            Welcome to OCEANA, your number one source for exquisite pearl jewelry. We're dedicated to providing you with the very best of rings, bracelets, pendants, and earrings, with a focus on quality, craftsmanship, and unique designs.
+        </p>
+        <p>
+            Founded in [2026] by [Khadijah], OCEANA has grown from a small venture into a well-loved jewelry brand. Our passion for ethically sourced pearls and exceptional artistry drove us to create a brand that values both elegance and sustainability.
+        </p>
+        <p>
+            We hope you enjoy our collections as much as we enjoy bringing them to you. If you have any questions or comments, please feel free to reach out to us.
+        </p>
+        <p>Sincerely,<br>[Khadijah]</p>
+    </div>
+
+    
+    <footer id="footer">
+        <h2>Contact Us</h2>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/yourprofile" target="_blank">
+                <img src="images/insta.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/yourprofile" target="_blank">
+                <img src="images/facebook.jpg" alt="Facebook">
+            </a>
+            <a href="mailto:youremail@example.com">
+                <img src="images/email.jpg" alt="Email">
+            </a>
+            <a href="https://www.google.com/maps/place/yourlocation" target="_blank">
+                <img src="images/googlemaps.png" alt="Google Maps">
+            </a>
+        </div>
+        <p>&copy; 2024 OCEANA. All rights reserved.</p>
+    </footer>
+</body>
+</html>

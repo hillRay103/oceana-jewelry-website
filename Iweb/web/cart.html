@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cart — OCEANA</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cart-row{display:flex;gap:12px;padding:8px;border-bottom:1px solid #eee}
+    #cart-items{margin:12px 0}
+    #cart-total{font-weight:bold;margin-top:12px}
+    form .field{margin:8px 0}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pearluxe</h1>
+    <nav class="site-nav"><a class="cart-link" href="cart.html">Cart (<span id="cart-count">0</span>)</a></nav>
+  </header>
+  <main>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total"></div>
+
+    <h3>Checkout</h3>
+    <form id="checkout-form">
+      <div class="field"><label>Name<br><input id="cust-name" required></label></div>
+      <div class="field"><label>Email<br><input id="cust-email" type="email" required></label></div>
+      <div class="field"><label>Address<br><textarea id="cust-address"></textarea></label></div>
+      <button type="submit">Place Order</button>
+    </form>
+
+    <div id="order-result" style="margin-top:16px"></div>
+  </main>
+  <script src="cart.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', renderCartPage);</script>
+</body>
+</html>
