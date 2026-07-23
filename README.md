@@ -19,42 +19,6 @@ Oceana is a full-stack jewelry e-commerce website that lets customers browse col
 | Backend    | Node.js, Express             |
 | Database   | MongoDB                      |
 
-##  Folder Structure
-
-oceana/
-├── frontend/
-│   ├── index.html
-│   ├── product.html
-│   ├── cart.html
-│   ├── checkout.html
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       ├── main.js
-│       ├── cart.js
-│       └── checkout.js
-│
-├── backend/
-│   ├── server.js
-│   ├── config/
-│   │   └── db.js
-│   ├── models/
-│   │   ├── Product.js
-│   │   ├── Cart.js
-│   │   └── Order.js
-│   ├── routes/
-│   │   ├── productRoutes.js
-│   │   ├── cartRoutes.js
-│   │   └── orderRoutes.js
-│   └── controllers/
-│       ├── productController.js
-│       ├── cartController.js
-│       └── orderController.js
-│
-├── package.json
-└── README.md
-
-
 ## 🔌 API Endpoints
 
 ### Products
