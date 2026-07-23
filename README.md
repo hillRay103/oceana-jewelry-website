@@ -1,4 +1,4 @@
-# 🌊 Oceana — Jewelry E-Commerce Website
+#  Oceana — Jewelry E-Commerce Website
 
 Oceana is a full-stack jewelry e-commerce website that lets customers browse collections, view product details, manage a shopping cart, and complete checkout — built with a clean HTML/CSS/JS frontend and a Node.js/Express backend backed by MongoDB.
 
@@ -87,37 +87,5 @@ oceana/
 ### Prerequisites
 - Node.js installed
 - MongoDB running locally or a MongoDB Atlas connection string
-
-### Installation
-
-```bash
-# Clone the repository
-git clone <repo-url>
-cd oceana
-
-# Install backend dependencies
-cd backend
-npm install
-
-### Environment Variables
-
-Create a `.env` file in the `backend/` folder:
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-
-### Run the Project
-
-```bash
-# Start the backend server
-npm start
-
-# Open frontend/index.html in your browser
-
-## 🚀 Future Improvements
-
-- User authentication and account management
-- Payment gateway integration
-- Product reviews and ratings
-- Admin dashboard for inventory management
 
 
